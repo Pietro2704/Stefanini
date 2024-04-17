@@ -13,21 +13,21 @@ require_once '../Conexao.php';
 <body>
 
 <?php
+
 // Verifica se o ID da tarefa foi passado como parâmetro na URL
 if (isset($_GET['id'])) {
     $tarefa_id = $_GET['id'];
     
-    // Faz a solicitação para obter os detalhes da tarefa do endpoint
+    // Pega o conteúdo do endpoint
     $url = "http://localhost/Stefanini/endpoints/detalhesTarefa.php?id=" . $tarefa_id;
     $response = file_get_contents($url);
 
-    // Verifica se a resposta foi recebida com sucesso
+    // Verifica se a resposta foi recebida
     if ($response !== false) {
-        // Decodifica a resposta JSON em um array associativo
+        // Decodifica a resposta JSON em um array
         $tarefa = json_decode($response, true);
-
-        // Exibe os detalhes da tarefa em uma tabela HTML com estilos Bootstrap
         ?>
+
         <div class="container">
             <h1 class="mt-5">Detalhes da Tarefa</h1>
             <table class="table table-bordered">
@@ -51,8 +51,8 @@ if (isset($_GET['id'])) {
         </div>
         <?php
     } else {
-        // Se houve algum erro ao obter os detalhes da tarefa, exibe uma mensagem de erro
-        echo "<p>Erro ao obter os detalhes da tarefa.</p>";
+      // Se houve algum erro ao obter os detalhes da tarefa, exibe uma mensagem de erro
+      echo "<p>Erro ao obter os detalhes da tarefa.</p>";
     }
 } else {
     // Se o ID da tarefa não foi fornecido na URL, exibe uma mensagem de erro

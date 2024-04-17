@@ -1,5 +1,6 @@
 <?php 
 
+// Criar conexao com o banco
 function conectarBanco(){
 
   $dbServer = "localhost";

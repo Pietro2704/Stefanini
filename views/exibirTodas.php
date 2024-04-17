@@ -1,4 +1,5 @@
 <?php 
+// peço a conexao criada
 require_once '../Conexao.php';
 ?>
 
@@ -29,17 +30,20 @@ require_once '../Conexao.php';
       <tbody>
 
       <?php
+
+        // Pega o conteúdo do endpoint
         $caminho = 'http://localhost/Stefanini/endpoints/todasTarefas.php';
         $response = file_get_contents($caminho);
         $tarefas = json_decode($response, true);
 
+        // Se não tiver vazio
         if (!empty($tarefas)) {
           foreach ($tarefas as $tarefa):
         ?>
 
         <tr>
           <td>
-            <a href="../endpoints/detalhesTarefa.php?id=<?php echo $tarefa['id']; ?>">
+            <a href="./Tarefa.php?id=<?php echo $tarefa['id']; ?>">
               <i class="bi bi-info-circle"></i>
             </a>
           </td>
@@ -51,6 +55,7 @@ require_once '../Conexao.php';
 
         <?php endforeach;
         } 
+        // Se tiver vazio
         else {
           echo "<tr><td colspan='5'>Nenhuma tarefa encontrada.</td></tr>";
         }
