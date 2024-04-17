@@ -18,8 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifica se a inserção foi bem-sucedida
     if ($stmt->affected_rows > 0) {
         // Retorna um código de status 201 (Created) e o ID do registro inserido em formato JSON
-        http_response_code(201);
-        echo json_encode(['id' => $conn->insert_id]);
+        // http_response_code(201);
+        // echo json_encode(['id' => $conn->insert_id]);
+        header('Location: ../index.php');
     } else {
         // Se a inserção falhou, retorna um código de status 500 (Internal Server Error) e uma mensagem de erro em formato JSON
         http_response_code(500);
