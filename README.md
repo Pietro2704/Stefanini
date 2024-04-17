@@ -1,38 +1,38 @@
 # Documentação
 
-#### Passo 1: Criar o Banco de Dados.
-- Arquivo: 'Banco.sql'.
-Criamos um banco de dados chamado 'Stefanini' com uma tabela 'task'
+### Passo 1: Criar o Banco de Dados.
+> Arquivo: 'Banco.sql'.
+- Criamos um banco de dados chamado 'Stefanini' com uma tabela 'task'
 
-#### Passo 2: Conectar aplicação ao banco.
-- Arquivo: 'Conexao.php'.
-Criamos uma função que estabelece uma conexão com o banco utilizando mysqli
+### Passo 2: Conectar aplicação ao banco.
+> Arquivo: 'Conexao.php'.
+- Criamos uma função que estabelece uma conexão com o banco utilizando mysqli
 
-#### Passo 3: Criar Tarefa.
-- Arquivo: 'index.php'.
-Criamos um formulário do método POST que manda as informações para o primero endpoint
+### Passo 3: Criar Tarefa.
+> Arquivo: 'index.php'.
+- Criamos um formulário do método POST que manda as informações para o primero endpoint
 
-#### Passo 4: Endpoint de criação de tarefa.
-- Arquivo: ./endpoints/criarTarefa.php.
-Por meio do método POST, pegamos as informações do formulário e adicionamos dentro do banco.
-Caso a inserção for bem sucedida, o usuario irá ser redirecionado para o index.
-Caso não, irá aparecer a mensagem de erro.
+### Passo 4: Endpoint de criação de tarefa.
+> Arquivo: ./endpoints/criarTarefa.php.
+- Por meio do método POST, pegamos as informações do formulário e adicionamos dentro do banco.
+- Caso a inserção for bem sucedida, o usuario irá ser redirecionado para o index.
+- Caso não, irá aparecer a mensagem de erro.
 
-#### Passo 5: Endpoint de todas as tarefas.
-- Arquivo: ./endpoints/todasTarefas.php
-Por meio do método GET, ele retorna todas as informações do banco em JSON
+### Passo 5: Endpoint de todas as tarefas.
+> Arquivo: ./endpoints/todasTarefas.php
+- Por meio do método GET, ele retorna todas as informações do banco em JSON
 
-#### Passo 6: Mostrar todas as tarefas.
-- Arquivo: ./views/exibirTodas.php
-Faz uma requisição GET à API para obter todas as tarefas e as exibe na página em formato de tabela.
+### Passo 6: Mostrar todas as tarefas.
+> Arquivo: ./views/exibirTodas.php
+- Faz uma requisição GET à API para obter todas as tarefas e as exibe na página em formato de tabela.
 
-#### Passo 7: Endpoint de uma única tarefa.
-- Arquivo: ./endpoints/detalhesTarefa.php
-Este endpoint é responsável por retornar os detalhes de uma única tarefa com base no ID fornecido na URL. Ele responde a solicitações GET e retorna os detalhes da tarefa em formato JSON.
+### Passo 7: Endpoint de uma única tarefa.
+> Arquivo: ./endpoints/detalhesTarefa.php
+- Este endpoint é responsável por retornar os detalhes de uma única tarefa com base no ID fornecido na URL. Ele responde a solicitações GET e retorna os detalhes da tarefa em formato JSON.
 
-#### Passo 8: Mostrar a tarefa
-- Arquivo: ./views/Tarefa.php
-Exibe os detalhes de uma única tarefa com base no ID fornecido na URL. Faz uma requisição GET ao endpoint detalhesTarefa.php para obter os detalhes da tarefa e os exibe em formato de tabela.
+### Passo 8: Mostrar a tarefa
+> Arquivo: ./views/Tarefa.php
+- Exibe os detalhes de uma única tarefa com base no ID fornecido na URL. Faz uma requisição GET ao endpoint detalhesTarefa.php para obter os detalhes da tarefa e os exibe em formato de tabela.
 
 
 # Requisitos do Projeto:
