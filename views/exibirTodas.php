@@ -1,6 +1,5 @@
 <?php 
 require_once '../Conexao.php';
-require_once '../endpoints/todasTarefas.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,16 +28,20 @@ require_once '../endpoints/todasTarefas.php';
     <tbody>
 
     <?php
-      $tarefasJson = obterTarefas();
-      $tarefas = json_decode($tarefasJson, true);
-      //var_dump($tarefas);
+      $caminho = 'http://localhost/Stefanini/endpoints/todasTarefas.php';
+      $response = file_get_contents($caminho);
+      $tarefas = json_decode($response, true);
 
       if (!empty($tarefas)) {
         foreach ($tarefas as $tarefa):
       ?>
 
       <tr>
-        <td>Icone</td>
+        <td>
+          <a href="../endpoints/detalhesTarefa.php?id=<?php echo $tarefa['id']; ?>">
+            <i class="bi bi-info-circle">aa</i>
+          </a>
+        </td>
         <td><?php echo $tarefa['id']; ?></td>
         <td><?php echo $tarefa['title']; ?></td>
         <td><?php echo $tarefa['descricao']; ?></td>

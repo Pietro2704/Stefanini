@@ -28,6 +28,7 @@
       <textarea name="descricao" id="" cols="30" rows="10"></textarea>
     </div>
 
+    <a href="./views/exibirTodas.php">Ver tudo</a>
     <button type="submit">ADD</button>
 
   </form>
