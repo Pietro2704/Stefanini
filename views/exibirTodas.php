@@ -20,9 +20,7 @@ require_once '../Conexao.php';
       <thead class="thead-dark">
         <tr>
           <th>Info</th>
-          <th>ID</th>
           <th>Título</th>
-          <th>Descrição</th>
           <th>Status</th>
         </tr>
       </thead>  
@@ -47,9 +45,7 @@ require_once '../Conexao.php';
               <i class="bi bi-info-circle"></i>
             </a>
           </td>
-          <td><?php echo $tarefa['id']; ?></td>
           <td><?php echo $tarefa['title']; ?></td>
-          <td><?php echo $tarefa['descricao']; ?></td>
           <td><?php echo $tarefa['stats']; ?></td>
         </tr>
 
@@ -57,7 +53,7 @@ require_once '../Conexao.php';
         } 
         // Se tiver vazio
         else {
-          echo "<tr><td colspan='5'>Nenhuma tarefa encontrada.</td></tr>";
+          echo "<tr><td colspan='3'>Nenhuma tarefa encontrada.</td></tr>";
         }
         ?>
 
