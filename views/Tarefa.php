@@ -7,13 +7,12 @@ require_once '../Conexao.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes da Tarefa</title>
+  <title>Detalhes da Tarefa</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
 <?php
-
-
 // Verifica se o ID da tarefa foi passado como parâmetro na URL
 if (isset($_GET['id'])) {
     $tarefa_id = $_GET['id'];
@@ -27,17 +26,30 @@ if (isset($_GET['id'])) {
         // Decodifica a resposta JSON em um array associativo
         $tarefa = json_decode($response, true);
 
-        // Exibe os detalhes da tarefa em uma tabela
-        echo "<h1>Detalhes da Tarefa</h1>";
-        echo "<table>";
-        echo "<tr><th>ID</th><th>Título</th><th>Descrição</th><th>Status</th></tr>";
-        echo "<tr>";
-        echo "<td>" . $tarefa['id'] . "</td>";
-        echo "<td>" . $tarefa['title'] . "</td>";
-        echo "<td>" . $tarefa['descricao'] . "</td>";
-        echo "<td>" . $tarefa['stats'] . "</td>";
-        echo "</tr>";
-        echo "</table>";
+        // Exibe os detalhes da tarefa em uma tabela HTML com estilos Bootstrap
+        ?>
+        <div class="container">
+            <h1 class="mt-5">Detalhes da Tarefa</h1>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Descrição</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?php echo $tarefa['id']; ?></td>
+                        <td><?php echo $tarefa['title']; ?></td>
+                        <td><?php echo $tarefa['descricao']; ?></td>
+                        <td><?php echo $tarefa['stats']; ?></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <?php
     } else {
         // Se houve algum erro ao obter os detalhes da tarefa, exibe uma mensagem de erro
         echo "<p>Erro ao obter os detalhes da tarefa.</p>";
@@ -48,5 +60,6 @@ if (isset($_GET['id'])) {
 }
 ?>
 
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
