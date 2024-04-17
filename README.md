@@ -36,9 +36,9 @@
 
 
 # Requisitos do Projeto:
+Objetivo: Desenvolver uma aplicação web com backend e frontend.
 
-## Projeto:
-### Objetivo: Desenvolver uma aplicação web com backend e frontend.
+### Projeto:
 Desenvolver uma aplicação de lista de tarefas (To-Do List). A aplicação deve permitir ao usuário
 criar uma nova tarefa, visualizar todas as tarefas e visualizar uma tarefa específica.
 A tarefa deve ter os seguintes campos:
@@ -46,3 +46,15 @@ A tarefa deve ter os seguintes campos:
 - Título: o título da tarefa.
 - Descrição: uma descrição detalhada da tarefa.
 - Status: o status da tarefa (por exemplo, "não iniciado", "em andamento", "concluído").
+
+### Backend:
+- Desenvolver uma API REST utilizando uma das seguintes tecnologias: .NET, Java ou PHP.
+- A API deve ter pelo menos três endpoints: um para criar um registro, um para obter todos os
+registros e um para obter um registro específico.
+- A API deve se conectar a um banco de dados para armazenar os registros. Você pode usar
+qualquer banco de dados de sua escolha.
+
+### Frontend:
+- Desenvolver uma interface de usuário que permita ao usuário criar um registro e visualizar
+todos os registros e um registro específico.
+- A interface deve se comunicar com a API REST que você desenvolveu.
